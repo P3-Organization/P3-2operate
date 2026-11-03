@@ -1,2 +1,4 @@
 # P3-2operate
 This is the github repository for the P3 project, group 5
+
+I'm telling you now, it's gonna be AWESOME
