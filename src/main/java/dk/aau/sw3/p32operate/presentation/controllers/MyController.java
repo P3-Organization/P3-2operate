@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MyController {
     private final MyService _myService;
 
-    public MyController(MyService myService) {
+    public MyController(MyService myService) { // Dependency injection
         _myService = myService;
     }
 
@@ -30,4 +30,6 @@ public class MyController {
         MyModel user = _myService.getUserData(id);
         return user.name;
     }
+
+    
 }

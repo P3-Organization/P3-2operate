@@ -13,7 +13,7 @@ public class MyService implements IService {
     private final IRepository _repository;
 
     @Autowired
-    public MyService(IRepository repository) {
+    public MyService(IRepository repository) { // Dependency injections
         this._repository = repository;
     }
 
