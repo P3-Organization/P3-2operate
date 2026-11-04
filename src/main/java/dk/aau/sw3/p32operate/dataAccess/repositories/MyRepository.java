@@ -12,6 +12,7 @@ public class MyRepository implements IRepository {
         put(1, "Harry");
         put(2, "Mikkel");
         put(3, "Heini");
+        put(4, "IKKE Luna");
     }};
 
     public String findUserById(int id) {

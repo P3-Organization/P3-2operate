@@ -2,15 +2,16 @@ package dk.aau.sw3.p32operate.presentation.controllers;
 
 import dk.aau.sw3.p32operate.business.models.MyModel;
 import dk.aau.sw3.p32operate.business.services.MyService;
+import dk.aau.sw3.p32operate.business.services.interfaces.IService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 public class MyController {
-    private final MyService _myService;
+    private final IService _myService;
 
-    public MyController(MyService myService) { // Dependency injection
+    public MyController(IService myService) { // Dependency injection
         _myService = myService;
     }
 
@@ -31,5 +32,5 @@ public class MyController {
         return user.name;
     }
 
-    
+
 }
