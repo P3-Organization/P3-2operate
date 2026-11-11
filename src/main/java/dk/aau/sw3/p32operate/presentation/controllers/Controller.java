@@ -7,12 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
 
 
-
-    @GetMapping("/")
-    public String hello() {
-        return "Hello, world!";
-    }
-
     @GetMapping("/2operate")
     public String message() {
         return "Mikkel's YNDLINGS firma er 2operate";
