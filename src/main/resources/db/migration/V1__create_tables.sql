@@ -1,0 +1,6 @@
+CREATE TABLE electricity_price (
+    date TIMESTAMP PRIMARY KEY,
+    kwh DOUBLE PRECISION NOT NULL,
+    kr_total DOUBLE PRECISION NOT NULL,
+    min_kr_total DOUBLE PRECISION NOT NULL
+);
