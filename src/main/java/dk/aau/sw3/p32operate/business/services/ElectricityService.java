@@ -5,6 +5,7 @@ import dk.aau.sw3.p32operate.business.models.PriceEntry;
 import dk.aau.sw3.p32operate.business.repositoryInterfaces.IElectricityPriceRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class ElectricityService {
         this.electricityPriceRepository = electricityPriceRepository;
     }
 
-    public ElectricityPriceModel getElectricityPricesFromDate(Date date) {
+    public ElectricityPriceModel getElectricityPricesFromDate(LocalDate date) {
         ElectricityPriceModel prices = new ElectricityPriceModel(date);
         List<PriceEntry> priceEntries = electricityPriceRepository.getElectricityPricesFromDate(date);
         if (priceEntries.isEmpty()) { return null; }

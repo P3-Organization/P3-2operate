@@ -2,6 +2,7 @@ package dk.aau.sw3.p32operate.business.models;
 
 import lombok.Getter;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -9,9 +10,9 @@ import java.util.List;
 public class ElectricityPriceModel {
     private List<PriceEntry> priceEntries = new ArrayList<PriceEntry>();
     @Getter
-    private Date date; // Keep track of what date this object has prices for
+    private LocalDate date; // Keep track of what date this object has prices for
 
-    public ElectricityPriceModel(Date date) {
+    public ElectricityPriceModel(LocalDate date) {
         this.date = date;
     }
 
@@ -22,5 +23,7 @@ public class ElectricityPriceModel {
             System.out.println("This list already has electricity prices");
         }
     }
+
+    public List<PriceEntry> getPriceEntries() { return priceEntries; }
 
 }

@@ -8,9 +8,9 @@ import org.springframework.web.client.RestClient;
 public class ApiConfig {
 
     @Bean
-    public RestClient restClient(RestClient.Builder builder) {
-        return builder
-                .baseUrl("https://www.elprisenligenu.dk/api/v1/prices/")
+    public RestClient restClient() {
+        return RestClient.builder()
+                .baseUrl("https://www.elprisenligenu.dk/api/v1/prices")
                 .defaultHeader("Accept", "application/json")
                 .build();
     }
