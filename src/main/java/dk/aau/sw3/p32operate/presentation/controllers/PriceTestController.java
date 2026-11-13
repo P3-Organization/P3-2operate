@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @RestController
 public class PriceTestController {
 
-    private ElectricityService electricityService;
+    private final ElectricityService electricityService;
 
     public PriceTestController(ElectricityService electricityService) {
         this.electricityService = electricityService;
