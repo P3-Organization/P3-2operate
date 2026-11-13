@@ -8,6 +8,7 @@ public class P32operateApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(P32operateApplication.class, args);
+
     }
 
 }

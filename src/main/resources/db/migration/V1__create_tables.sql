@@ -1,4 +1,4 @@
-CREATE TABLE electricity_price (
+CREATE TABLE electricity_consumption (
     date TIMESTAMP PRIMARY KEY,
     kwh DOUBLE PRECISION NOT NULL,
     kr_total DOUBLE PRECISION NOT NULL,
