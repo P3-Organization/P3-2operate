@@ -16,15 +16,18 @@ public class PriceTestController {
     }
 
     @GetMapping("/price")
-    public void price() {
+    public String price() {
+        StringBuilder s = new StringBuilder();
         LocalDate date = LocalDate.now();
         var prices = electricityService.getElectricityPricesFromDate(date);
         if (prices != null) {
             for (var priceEntry : prices.getPriceEntries()) {
                 if (priceEntry != null) {
                     System.out.println("Time: " + priceEntry.timeStart() + " Price: " + priceEntry.dkkPerKwh() + "DKK");
+                    s.append("Time: ").append(priceEntry.timeStart()).append(" Price: ").append(priceEntry.dkkPerKwh()).append("DKK\n");
                 }
             }
         }
+        return s.toString();
     }
 }
