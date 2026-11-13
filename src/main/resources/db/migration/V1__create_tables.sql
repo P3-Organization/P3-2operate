@@ -17,6 +17,7 @@ CREATE TABLE temp_rooms (
 
 CREATE TABLE rooms (
     room_id INT NOT NULL,
+    room_name TEXT NOT NULL,
     time TIMESTAMP NOT NULL,
     humidity DOUBLE PRECISION NOT NULL,
     hoa_humidity DOUBLE PRECISION,

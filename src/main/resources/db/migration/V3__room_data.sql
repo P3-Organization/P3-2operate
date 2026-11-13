@@ -13,8 +13,8 @@ COPY temp_rooms (time, humidity, hoa_humidity, temperature, hoa_temperature, sig
     FROM '/csv/RoomCSV/Fjordstue.csv'
     WITH(FORMAT csv, HEADER true);
 
-INSERT INTO rooms(room_id ,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
-SELECT 1, time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
+INSERT INTO rooms(room_id, room_name, time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
+SELECT 1, 'Fjordstue', time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
 FROM temp_rooms;
 
 TRUNCATE TABLE temp_rooms;
@@ -24,8 +24,8 @@ COPY temp_rooms (time, humidity, hoa_humidity, temperature, hoa_temperature, sig
     FROM '/csv/RoomCSV/HallNord.csv'
     WITH(FORMAT csv, HEADER true);
 
-INSERT INTO rooms(room_id ,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
-SELECT 2, time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
+INSERT INTO rooms(room_id, room_name, time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
+SELECT 2, 'Hall nord', time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
 FROM temp_rooms;
 
 TRUNCATE TABLE temp_rooms;
@@ -35,8 +35,8 @@ COPY temp_rooms (time, humidity, hoa_humidity, temperature, hoa_temperature, sig
     FROM '/csv/RoomCSV/HallSyd.csv'
     WITH(FORMAT csv, HEADER true);
 
-INSERT INTO rooms(room_id ,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
-SELECT 3, time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
+INSERT INTO rooms(room_id, room_name, time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
+SELECT 3, 'Hall syd', time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
 FROM temp_rooms;
 
 TRUNCATE TABLE temp_rooms;
@@ -46,8 +46,8 @@ COPY temp_rooms (time, humidity, hoa_humidity, temperature, hoa_temperature, sig
     FROM '/csv/RoomCSV/RestarantNord.csv'
     WITH(FORMAT csv, HEADER true);
 
-INSERT INTO rooms(room_id ,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
-SELECT 4, time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
+INSERT INTO rooms(room_id, room_name, time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
+SELECT 4, 'Restaurant nord', time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
 FROM temp_rooms;
 
 TRUNCATE TABLE temp_rooms;
@@ -57,8 +57,8 @@ COPY temp_rooms (time, humidity, hoa_humidity, temperature, hoa_temperature, sig
     FROM '/csv/RoomCSV/RestarantSyd.csv'
     WITH(FORMAT csv, HEADER true);
 
-INSERT INTO rooms(room_id ,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
-SELECT 5, time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
+INSERT INTO rooms(room_id, room_name,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
+SELECT 5, 'Restaurant syd', time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
 FROM temp_rooms;
 
 TRUNCATE TABLE temp_rooms;
@@ -68,8 +68,8 @@ COPY temp_rooms (time, humidity, hoa_humidity, temperature, hoa_temperature, sig
     FROM '/csv/RoomCSV/Room49.csv'
     WITH(FORMAT csv, HEADER true);
 
-INSERT INTO rooms(room_id ,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
-SELECT 6, time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
+INSERT INTO rooms(room_id, room_name,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
+SELECT 6, 'Room 49', time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
 FROM temp_rooms;
 
 TRUNCATE TABLE temp_rooms;
@@ -79,8 +79,8 @@ COPY temp_rooms (time, humidity, hoa_humidity, temperature, hoa_temperature, sig
     FROM '/csv/RoomCSV/Room50.csv'
     WITH(FORMAT csv, HEADER true);
 
-INSERT INTO rooms(room_id ,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
-SELECT 7, time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
+INSERT INTO rooms(room_id, room_name,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
+SELECT 7, 'Room 50', time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
 FROM temp_rooms;
 
 TRUNCATE TABLE temp_rooms;
@@ -90,8 +90,8 @@ COPY temp_rooms (time, humidity, hoa_humidity, temperature, hoa_temperature, sig
     FROM '/csv/RoomCSV/Room61.csv'
     WITH(FORMAT csv, HEADER true);
 
-INSERT INTO rooms(room_id ,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
-SELECT 8, time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
+INSERT INTO rooms(room_id, room_name,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
+SELECT 8, 'Room 61', time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
 FROM temp_rooms;
 
 TRUNCATE TABLE temp_rooms;
@@ -101,8 +101,8 @@ COPY temp_rooms (time, humidity, hoa_humidity, temperature, hoa_temperature, sig
     FROM '/csv/RoomCSV/Room62.csv'
     WITH(FORMAT csv, HEADER true);
 
-INSERT INTO rooms(room_id ,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
-SELECT 9, time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
+INSERT INTO rooms(room_id, room_name,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
+SELECT 9,'Room 62', time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
 FROM temp_rooms;
 
 TRUNCATE TABLE temp_rooms;
@@ -112,8 +112,8 @@ COPY temp_rooms (time, humidity, hoa_humidity, temperature, hoa_temperature, sig
     FROM '/csv/RoomCSV/Room63.csv'
     WITH(FORMAT csv, HEADER true);
 
-INSERT INTO rooms(room_id ,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
-SELECT 10, time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
+INSERT INTO rooms(room_id, room_name,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
+SELECT 10, 'Room 63',time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
 FROM temp_rooms;
 
 TRUNCATE TABLE temp_rooms;
@@ -123,8 +123,8 @@ COPY temp_rooms (time, humidity, hoa_humidity, temperature, hoa_temperature, sig
     FROM '/csv/RoomCSV/Room64.csv'
     WITH(FORMAT csv, HEADER true);
 
-INSERT INTO rooms(room_id ,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
-SELECT 11, time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
+INSERT INTO rooms(room_id, room_name,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
+SELECT 11, 'Room 64', time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
 FROM temp_rooms;
 
 TRUNCATE TABLE temp_rooms;
@@ -134,8 +134,8 @@ COPY temp_rooms (time, humidity, hoa_humidity, temperature, hoa_temperature, sig
     FROM '/csv/RoomCSV/StortKøkken.csv'
     WITH(FORMAT csv, HEADER true);
 
-INSERT INTO rooms(room_id ,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
-SELECT 12, time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
+INSERT INTO rooms(room_id, room_name,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
+SELECT 12, 'Stort køkken',time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
 FROM temp_rooms;
 
 TRUNCATE TABLE temp_rooms;
@@ -145,8 +145,8 @@ COPY temp_rooms (time, humidity, hoa_humidity, temperature, hoa_temperature, sig
     FROM '/csv/RoomCSV/Sydfløj.csv'
     WITH(FORMAT csv, HEADER true);
 
-INSERT INTO rooms(room_id ,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
-SELECT 13, time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
+INSERT INTO rooms(room_id, room_name,time, humidity, hoa_humidity, temperature, hoa_temperature, signal_temperature)
+SELECT 13, 'Sydfløj', time, humidity, hoa_humidity, temperature, hoa_temperature, REPLACE("signal_temperature", ',', '.')::DOUBLE PRECISION
 FROM temp_rooms;
 
 TRUNCATE TABLE temp_rooms;
