@@ -1,6 +1,5 @@
 package dk.aau.sw3.p32operate;
 
-import dk.aau.sw3.p32operate.dataAccess.repositories.IConsumptionRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
