@@ -6,7 +6,6 @@ import dk.aau.sw3.p32operate.business.repositoryInterfaces.IElectricityPriceRepo
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @Service
