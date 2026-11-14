@@ -31,5 +31,6 @@ CREATE TABLE room_recordings (
     CONSTRAINT fk_room_id
         FOREIGN KEY (room_id)
         REFERENCES rooms(room_id)
+        ON DELETE RESTRICT
 );
 

@@ -1,14 +1,12 @@
 package dk.aau.sw3.p32operate.dataAccess.repositories;
 
 import dk.aau.sw3.p32operate.dataAccess.entities.ConsumptionEntity;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -68,11 +66,13 @@ public class IConsumptionRepositoryTests {
         assertThat(entity).isEmpty();
     }
 
-    @AfterEach
-    public void tearDown(){
-        consumptionRepository.delete(testConsumption1);
-        consumptionRepository.delete(testConsumption2);
-        consumptionRepository.delete(testConsumption3);
+    @Test
+    void testThatConsumptionCanBeDeleted(){
+        Optional<ConsumptionEntity> entity = consumptionRepository.findByDate(testConsumption1.getDate());
+        assertThat(entity).isPresent();
+        consumptionRepository.delete(entity.get());
+        entity = consumptionRepository.findByDate(testConsumption1.getDate());
+        assertThat(entity).isEmpty();
     }
 
 }

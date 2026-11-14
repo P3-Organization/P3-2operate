@@ -1,20 +1,20 @@
 package dk.aau.sw3.p32operate.dataAccess.repositories;
 
-import dk.aau.sw3.p32operate.dataAccess.entities.ConsumptionEntity;
 import dk.aau.sw3.p32operate.dataAccess.entities.RoomEntity;
 import dk.aau.sw3.p32operate.dataAccess.entities.RoomRecordEntity;
-import org.junit.jupiter.api.AfterEach;
+import org.hibernate.exception.ConstraintViolationException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
+import org.springframework.boot.jpa.test.autoconfigure.TestEntityManager;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @DataJpaTest(properties = {
         "spring.datasource.url=jdbc:h2:mem:testdb",
@@ -27,6 +27,9 @@ public class IRoomRepositoryTest {
 
     @Autowired
     private IRoomRecordRepository recordRepository;
+
+    @Autowired
+    private TestEntityManager entityManager;
 
     RoomEntity testRoom1;
     RoomEntity testRoom2;
@@ -71,8 +74,6 @@ public class IRoomRepositoryTest {
         testRoom3.setRoomId(3);
         testRoom3.setRoomName("Test room 3");
         roomRepository.save(testRoom3);
-
-
     }
 
     @Test
@@ -97,18 +98,20 @@ public class IRoomRepositoryTest {
 
     @Test
     void testThatRoomRecordsCanBeFound(){
-        Optional<RoomEntity> entity = roomRepository.findByRoomId(1);
+        entityManager.flush();
+        entityManager.clear();
+
+        Optional<RoomEntity> entity = roomRepository.findByRoomId(testRoom1.getRoomId());
         assertThat(entity).isPresent();
         assertThat(entity.get().getRoomRecordings()).hasSize(2);
-//        assertThat(entity.get().getRoomRecordings()).contains(record1, record2);
+        assertThat(entity.get().getRoomRecordings()).contains(record1, record2);
     }
 
-
-    @AfterEach
-    public void tearDown(){
-        roomRepository.delete(testRoom1);
-        roomRepository.delete(testRoom2);
-        roomRepository.delete(testRoom3);
+    @Test
+    void testThatRoomCantBeDeleted(){
+        assertThatThrownBy(()->{
+            roomRepository.delete(testRoom1);
+            entityManager.flush();
+        }).isInstanceOf(ConstraintViolationException.class);
     }
-
 }
