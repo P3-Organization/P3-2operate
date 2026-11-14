@@ -5,7 +5,7 @@ CREATE TABLE electricity_consumption (
     min_kr_total DOUBLE PRECISION NOT NULL
 );
 
-CREATE TABLE temp_rooms (
+CREATE TABLE temp_room_recordings (
     time TIMESTAMP NOT NULL,
     humidity DOUBLE PRECISION NOT NULL,
     hoa_humidity DOUBLE PRECISION,
@@ -14,14 +14,22 @@ CREATE TABLE temp_rooms (
     signal_temperature TEXT
 );
 
+CREATE TABLE rooms(
+    room_id INT PRIMARY KEY ,
+    room_name VARCHAR(255) NOT NULL
+);
 
-CREATE TABLE rooms (
+CREATE TABLE room_recordings (
+    id SERIAL PRIMARY KEY,
     room_id INT NOT NULL,
-    room_name TEXT NOT NULL,
     time TIMESTAMP NOT NULL,
     humidity DOUBLE PRECISION NOT NULL,
     hoa_humidity DOUBLE PRECISION,
     temperature DOUBLE PRECISION NOT NULL ,
     hoa_temperature DOUBLE PRECISION,
-    signal_temperature DOUBLE PRECISION
+    signal_temperature DOUBLE PRECISION,
+    CONSTRAINT fk_room_id
+        FOREIGN KEY (room_id)
+        REFERENCES rooms(room_id)
 );
+
