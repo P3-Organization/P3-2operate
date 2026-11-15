@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/navigationbar.css">
     <link rel="stylesheet" href="/css/design.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>RoomOverview</title>
+    <title>DataOverview</title>
 </head>
 <body>
     <nav class="Navigationbar">
@@ -19,46 +19,55 @@
             <li><a href="/index">Hjem</a></li>
         </ul>
     </nav>
-    
-    <div class="sidebar">
-        <div class="info">
-            <img src="/images/Profile_image.avif" class="user_image">
-            <h3>Profil Info:</h3>
-            <p>Navn:</p>
-            <p>Email:</p>
-            <p>Adgang:</p>
-        </div>
-        <ul>
-            <li>
-                <a href="#">
-                    <i class="bx bx-body"></i>
-                    <span class="nav-item">Kontakt Os</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="bx bx-cog"></i>
-                    <span class="nav-item">Systemindstillinger</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="bx bx-log-out"></i>
-                    <span class="nav-item">Log Ud</span>
-                </a>
-            </li>
-        </ul>
-    </div>
 
-    <!--Code for this page starts in this <div> seen below-->
-    <div class="main-content">
-        <div class="container">
-            <h1>Værelser:</h1>
-        </div>
-        <div class="Rooms">
-            <p id="room"></p>
-        </div>$
+<div class="sidebar">
+    <div class="info">
+        <img src="Profile_image.avif" class="user_image">
+        <h3>Profil Info:</h3>
+        <p>Navn:</p>
+        <p>Email:</p>
+        <p>Adgang:</p>
     </div>
+    <ul>
+        <li>
+            <a href="#">
+                <i class="bx bx-body"></i>
+                <span class="nav-item">Kontakt Os</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="bx bx-cog"></i>
+                <span class="nav-item">Systemindstillinger</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="bx bx-log-out"></i>
+                <span class="nav-item">Log Ud</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!--Code for this page starts in this <div> seen below-->
+<h1>Værelser:</h1>
+<div class="container">
+    <div class="button-group">
+        <button id="49" onclick="location.href='dataOverview.html'">49</button>
+        <button id="50">50</button>
+        <button id="61">61</button>
+        <button id="62">62</button>
+        <button id="63">63</button>
+        <button id="64">64</button>
+        <br>
+        <button id="ST_Køkken">ST Køkken</button>
+        <button id="Syd_fløj">Syd Fløj</button>
+        <button id="Hall_S">Hall S.</button>
+        <button id="Hall_N">Hall N.</button>
+        <button id="Fjordstuen">Fjordstuen</button>
+    </div>
+</div>
 
 </body>
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/profile.css">
     <link rel="stylesheet" href="/css/navigationbar.css">
-    <link rel="stylesheet" href="/css/design.css">
+    <link rel="stylesheet" href="/css/index.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>DataOverview</title>
 </head>
@@ -22,7 +22,7 @@
 
     <div class="sidebar">
         <div class="info">
-            <img src="/images/Profile_image.avif" class="user_image">
+            <img src="Profile_image.avif" class="user_image">
             <h3>Profil Info:</h3>
             <p>Navn:</p>
             <p>Email:</p>
@@ -51,9 +51,53 @@
     </div>
 
     <!--Code for this page starts in this <div> seen below-->
-    <div class="main-content">
-        <div class="container">
-            <h1>Data for Værelse: XXX</h1>
+    <h1>Data for Værelse:</h1>
+    <div class="data-main-content">
+        <div class="data-graphs">
+        </div>
+        <div class="data-grid">
+            <div id="Humidity">
+                <i id="info_icon" class="bx bx-info-circle">
+                    <span class="info_text">Info Tekst</span>
+                </i>
+                <p class="number">XX</p>
+                <p class="name">Fugt Måling</p>
+            </div>
+            <div id="HOAHumidity">
+                <i id="info_icon" class="bx bx-info-circle">
+                    <span class="info_text">Info Tekst</span>
+                </i>
+                <p class="number">XX</p>
+                <p class="name">HOA Fugt</p>
+            </div>
+            <div id="Temperature">
+                <i id="info_icon" class="bx bx-info-circle">
+                    <span class="info_text">Info Tekst</span>
+                </i>
+                <p class="number">XX</p>
+                <p class="name">Temperatur Måling</p>
+            </div>
+            <div id="HOATemperature">
+                <i id="info_icon" class="bx bx-info-circle">
+                    <span class="info_text">Info Tekst</span>
+                </i>
+                <p class="number">XX</p>
+                <p class="name">HOA Temperatur</p>
+            </div>
+            <div id="SignalTemperature">
+                <i id="info_icon" class="bx bx-info-circle">
+                    <span class="info_text">Info Tekst</span>
+                </i>
+                <p class="number">XX</p>
+                <p class="name">Signal Temperatur</p>
+            </div>
+            <div id="RoomPrice">
+                <i id="info_icon" class="bx bx-info-circle">
+                    <span class="info_text">Info Tekst</span>
+                </i>
+                <p class="number">XX</p>
+                <p class="name">Samlet Pris på Værelse</p>
+            </div>
         </div>
     </div>
 
