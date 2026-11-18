@@ -8,10 +8,12 @@ import dk.aau.sw3.p32operate.presentation.dto.RoomDTO;
 import dk.aau.sw3.p32operate.presentation.dto.RoomRecordDTO;
 import dk.aau.sw3.p32operate.presentation.mappers.interfaces.IRoomDTOMapper;
 import dk.aau.sw3.p32operate.presentation.mappers.interfaces.IRoomRecordDTOMapper;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class RoomDTOMapper implements IRoomDTOMapper {
     IRoomRecordDTOMapper recordDTOMapper;
 
@@ -20,12 +22,12 @@ public class RoomDTOMapper implements IRoomDTOMapper {
     }
 
     @Override
-    public Room mapToRoomDTO(Room room){
+    public RoomDTO mapToRoomDTO(Room room){
         List<RoomRecordDTO> records = new ArrayList<>();
         RoomDTO roomDTO = new RoomDTO(room.getRoomId(),room.getRoomName(),records);
         for(RoomRecord re : room.getRecords()){
             records.add(recordDTOMapper.mapToRoomRecordDTO(re, roomDTO));
         }
-        return room;
+        return roomDTO;
     }
 }
