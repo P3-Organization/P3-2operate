@@ -1,0 +1,61 @@
+.box {
+    background-color: #f3f4f6;
+    padding: 20px;
+    max-width: 1100px;
+    min-height: 500px;
+}
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background-color: #d4d7de;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.active-tab {
+    background-color: #c4c8d0;
+}
+
+.red-dot {
+    color: red;
+    font-weight: bold;
+}
+.search-box {
+    background-color: #d4d7de;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 18px;
+    width: 260px;
+    font-size: 15px;
+}
+
+.note {
+    background-color: #c4c8d0;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 15px;
+    font-size: 17px;
+}
+
+.note-unseen {
+    font-weight: bold;
+}
+
+.note-seen {
+    color: #555;
+}
+
+.no-result {
+    text-align: center;
+    color: #777;
+    display: none;
+}
