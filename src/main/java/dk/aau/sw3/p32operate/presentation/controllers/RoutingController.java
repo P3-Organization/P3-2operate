@@ -17,5 +17,11 @@ public class RoutingController {
 
     @GetMapping("/roomOverview")
     public String roomOverview() { return "roomOverview"; }
+
+    @GetMapping("/login")
+    public String login() { return "login"; }
+
+    @GetMapping("/register")
+    public String register() { return "register"; }
     
 }
