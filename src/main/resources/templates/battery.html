@@ -51,9 +51,43 @@
     </div>
 
     <!--Code for this page starts in this <div> seen below-->
-    <div class="main-content">
-        <div class="container">
-            <h1>Batteri Overblik</h1>
+    <h1>Batteri Overblik</h1>
+    <div class="battery-main-content">
+        <div class="battery">
+            <div id="BatteryPercentage">
+                <p class="header">Batteri Procent:</p>
+                <br>
+                <i class="bx bx-info-circle">
+                    <span class="info_text">Hvor mange procent <br> som der er på batteriet <br> på dette tidspunkt.</span>
+                </i>
+                <p class="amount">XX%</p>
+                <i id="battery_icon"></i>
+            </div>
+            <div id="BatteryCapacity">
+                <p class="header">Batteri Kapacitet:</p>
+                <br>
+                <i class="bx bx-info-circle">
+                    <span class="info_text">Den optimale batteri <br> kapacitet målt i kWh</span>
+                </i>
+                <p class="amount">XX</p>
+                <p class="details">kWh</p>
+            </div>
+            <div id="ChargeBattery">
+                <p class="header">Ladning af Batteri:</p>
+                <p class="BatteryExplain">Tænd/sluk for 'opladning' af batteri</p>
+                <label class="toggle">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div id="UseBattery">
+                <p class="header">Brug af Batteri:</p>
+                <p class="BatteryExplain">Tænd/sluk for 'brug' af batteri</p>
+                <label class="toggle">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
         </div>
     </div>
 
