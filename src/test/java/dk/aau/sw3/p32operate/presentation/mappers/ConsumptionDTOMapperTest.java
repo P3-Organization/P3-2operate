@@ -1,8 +1,6 @@
 package dk.aau.sw3.p32operate.presentation.mappers;
 
-import dk.aau.sw3.p32operate.business.mappers.interfaces.IConsumptionMapper;
 import dk.aau.sw3.p32operate.business.models.Consumption;
-import dk.aau.sw3.p32operate.dataAccess.entities.ConsumptionEntity;
 import dk.aau.sw3.p32operate.presentation.dto.ConsumptionDTO;
 import dk.aau.sw3.p32operate.presentation.mappers.interfaces.IConsumptionDTOMapper;
 import org.junit.jupiter.api.Test;

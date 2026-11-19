@@ -1,6 +1,5 @@
 package dk.aau.sw3.p32operate.business.models;
 
-import dk.aau.sw3.p32operate.dataAccess.entities.RoomEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,8 +1,4 @@
 package dk.aau.sw3.p32operate.presentation.dto;
-
-import dk.aau.sw3.p32operate.business.models.Room;
-import org.springframework.stereotype.Component;
-
 import java.time.LocalDateTime;
 
 

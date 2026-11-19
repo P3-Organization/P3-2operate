@@ -2,8 +2,6 @@ package dk.aau.sw3.p32operate.presentation.mappers;
 
 import dk.aau.sw3.p32operate.business.models.Room;
 import dk.aau.sw3.p32operate.business.models.RoomRecord;
-import dk.aau.sw3.p32operate.dataAccess.entities.RoomEntity;
-import dk.aau.sw3.p32operate.dataAccess.entities.RoomRecordEntity;
 import dk.aau.sw3.p32operate.presentation.dto.RoomDTO;
 import dk.aau.sw3.p32operate.presentation.dto.RoomRecordDTO;
 import dk.aau.sw3.p32operate.presentation.mappers.interfaces.IRoomDTOMapper;

@@ -4,7 +4,6 @@ import dk.aau.sw3.p32operate.business.mappers.interfaces.IRoomRecordMapper;
 import dk.aau.sw3.p32operate.business.models.Room;
 import dk.aau.sw3.p32operate.business.models.RoomRecord;
 import dk.aau.sw3.p32operate.dataAccess.entities.RoomRecordEntity;
-import dk.aau.sw3.p32operate.dataAccess.repositories.IRoomRecordRepository;
 import org.springframework.stereotype.Component;
 
 @Component
