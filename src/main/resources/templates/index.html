@@ -10,52 +10,115 @@
     <title>index</title>
 </head>
 <body>
-    <nav class="Navigationbar">
-        <ul>
-            <li id="btn"><a href="#">Profil</a></li>
-            <li><a href="/battery">Batteri</a></li>
-            <li><a href="/notifications">Notifikationer</a></li>
-            <li><a href="/roomOverview">Værelser</a></li>
-            <li><a href="/">Hjem</a></li>
-        </ul>
-    </nav>
+<nav class="Navigationbar">
+    <ul>
+        <li id="btn"><a href="#">Profil</a></li>
+        <li><a href="/battery">Batteri</a></li>
+        <li><a href="/notifications">Notifikationer</a></li>
+        <li><a href="/roomOverview">Værelser</a></li>
+        <li><a href="/">Hjem</a></li>
+    </ul>
+</nav>
 
-    <div class="sidebar">
-        <div class="info">
-            <img src="/images/Profile_image.avif" class="user_image">
-            <h3>Profil Info:</h3>
-            <p>Navn:</p>
-            <p>Email:</p>
-            <p>Adgang:</p>
-        </div>
-        <ul>
-            <li>
-                <a href="#">
-                    <i class="bx bx-body"></i>
-                    <span class="nav-item">Kontakt Os</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="bx bx-cog"></i>
-                    <span class="nav-item">Systemindstillinger</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="bx bx-log-out"></i>
-                    <span class="nav-item">Log Ud</span>
-                </a>
-            </li>
-        </ul>
+<div class="sidebar">
+    <div class="info">
+        <img src="/images/Profile_image.avif" class="user_image">
+        <h3>Profil Info:</h3>
+        <p>Navn:</p>
+        <p>Email:</p>
+        <p>Adgang:</p>
     </div>
+    <ul>
+        <li>
+            <a href="#">
+                <i class="bx bx-body"></i>
+                <span class="nav-item">Kontakt Os</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="bx bx-cog"></i>
+                <span class="nav-item">Systemindstillinger</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="bx bx-log-out"></i>
+                <span class="nav-item">Log Ud</span>
+            </a>
+        </li>
+    </ul>
+</div>
 
-    <div class="main-content">
-        <div class="container">
-            <h1>Velkommen Tilbage xxx</h1>
+<main class="home">
+    <h1 class="home-welcome">Velkommen Tilbage xxx</h1>
+
+    <div class="home-grid">
+        <section class="home-panel home-notif">
+            <div class="notif-head">
+                <a href="/notifications" class="notif-title">Notifikationer</a>
+                <a href="/notifications" class="notif-bell" title="Notifikationer">
+                    <i class="bx bx-bell"></i>
+                    <span class="bell-dot"></span>
+                </a>
+            </div>
+            <div class="home-note home-note-unseen">Tænd pumpe <span class="red-dot">&#9679;</span></div>
+            <div class="home-note">Oplad batteriet fra 13.00 til 16.00</div>
+        </section>
+
+        <div class="home-widget">
+            <h2 class="widget-title">Data overblik</h2>
+            <section class="home-panel">
+                <button class="tile-remove mode-toggle" title="Vælg visning">&times;</button>
+                <div class="view-chooser" hidden>
+                    <button type="button" data-mode="graph">Graf</button>
+                    <button type="button" data-mode="quick">Tal</button>
+                </div>
+                <div id="quickView">
+                    <div id="widgetTiles" class="widget-tiles"></div>
+                </div>
+                <div id="graphView" class="graph-view" hidden>
+                    <div class="graph-box">
+                        <strong>Grafer</strong>
+                    </div>
+                </div>
+            </section>
         </div>
+
+        <section class="home-panel home-rooms">
+            <h2><a href="/roomOverview">Værelser</a></h2>
+            <div class="room-grid">
+                <a href="/roomOverview" class="room-tile" data-room="St (Køkken)">St (Køkken)</a>
+                <a href="/roomOverview" class="room-tile" data-room="Syd Fløj">Syd Fløj</a>
+                <a href="/roomOverview" class="room-tile" data-room="Hall S.">Hall S.</a>
+                <a href="/roomOverview" class="room-tile" data-room="Hall N.">Hall N.</a>
+                <a href="/roomOverview" class="room-tile" data-room="Rest S.">Rest S.</a>
+                <a href="/roomOverview" class="room-tile" data-room="Rest N.">Rest N.</a>
+                <a href="/roomOverview" class="room-tile" data-room="Fjordstuen">Fjordstuen</a>
+                <a href="/roomOverview" class="room-tile" data-room="61">61</a>
+                <a href="/roomOverview" class="room-tile" data-room="62">62</a>
+                <a href="/roomOverview" class="room-tile" data-room="63">63</a>
+                <a href="/roomOverview" class="room-tile active" data-room="64">64</a>
+                <a href="/roomOverview" class="room-tile" data-room="50">50</a>
+                <a href="/roomOverview" class="room-tile" data-room="49">49</a>
+
+                <div class="room-quick">
+                    <span class="room-quick-title">Hurtige data fra værelse: <strong id="quickRoom">64</strong></span>
+                    <div class="room-quick-values">
+                        <div class="quick-value">
+                            <span>XX</span>
+                            <small>Temperatur</small>
+                        </div>
+                        <div class="quick-value">
+                            <span>XX</span>
+                            <small>El (kWh)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-</body>
+</main>
 
 <script>
     let btn = document.querySelector('#btn');
@@ -64,6 +127,108 @@
     btn.onclick = function() {
         sidebar.classList.toggle('active');
     };
-</script>
 
+    // Placeholder værdier. Erstat XX med data fra backend, når de er klar.
+    const widgetTypes = {
+        batteri:    { label: "Batteri",    unit: "kWh" },
+        fugtighed:  { label: "Fugtighed",  unit: "%" },
+        temperatur: { label: "Temperatur", unit: "°C" },
+        elforbrug:  { label: "EL forbrug", unit: "kWh" },
+        elpris:     { label: "EL pris",    unit: "kr/kWh" }
+    };
+
+    const storageKey = "homeWidgetTiles";
+    let selected = JSON.parse(localStorage.getItem(storageKey) || "null") || ["batteri", "fugtighed", "temperatur", "elforbrug", "elpris"];
+    const container = document.getElementById("widgetTiles");
+
+    function saveSelected() {
+        localStorage.setItem(storageKey, JSON.stringify(selected));
+    }
+
+    function renderWidget() {
+        container.innerHTML = "";
+
+        selected.forEach((key, index) => {
+            const t = widgetTypes[key];
+            const tile = document.createElement("div");
+            tile.className = "widget-tile";
+            tile.innerHTML =
+                '<button class="tile-remove" title="Fjern">&times;</button>' +
+                '<strong></strong><div class="tile-value">XX</div><span class="tile-unit"></span>';
+            tile.querySelector("strong").textContent = t.label;
+            tile.querySelector(".tile-unit").textContent = t.unit;
+            tile.querySelector(".tile-remove").addEventListener("click", () => {
+                selected.splice(index, 1);
+                saveSelected();
+                renderWidget();
+            });
+            container.appendChild(tile);
+        });
+
+        if (selected.length < Object.keys(widgetTypes).length) {
+            const addBox = document.createElement("div");
+            addBox.className = "widget-tile widget-add";
+
+            const select = document.createElement("select");
+            select.className = "tile-select";
+            select.innerHTML = '<option value="">+</option>';
+
+            Object.keys(widgetTypes)
+                .filter(k => !selected.includes(k))
+                .forEach(k => {
+                    const opt = document.createElement("option");
+                    opt.value = k;
+                    opt.textContent = widgetTypes[k].label;
+                    select.appendChild(opt);
+                });
+
+            select.addEventListener("change", () => {
+                if (!select.value) return;
+                selected.push(select.value);
+                saveSelected();
+                renderWidget();
+            });
+
+            addBox.appendChild(select);
+            container.appendChild(addBox);
+        }
+    }
+
+    renderWidget();
+
+    // Hurtig data for det værelse musen står over
+    const quickRoom = document.getElementById("quickRoom");
+    document.querySelectorAll(".room-tile[data-room]").forEach(tile => {
+        tile.addEventListener("mouseenter", () => {
+            quickRoom.textContent = tile.dataset.room;
+            document.querySelectorAll(".room-tile").forEach(t => t.classList.remove("active"));
+            tile.classList.add("active");
+        });
+    });
+
+    // Skift mellem hurtig data og grafer
+    const quickView = document.getElementById("quickView");
+    const graphView = document.getElementById("graphView");
+    const chooser = document.querySelector(".view-chooser");
+
+    function setMode(mode) {
+        localStorage.setItem("widgetMode", mode);
+        quickView.hidden = mode !== "quick";
+        graphView.hidden = mode !== "graph";
+    }
+
+    setMode(localStorage.getItem("widgetMode") || "quick");
+
+    document.querySelector(".mode-toggle").addEventListener("click", () => {
+        chooser.hidden = !chooser.hidden;
+    });
+
+    chooser.querySelectorAll("button").forEach(btn => {
+        btn.addEventListener("click", () => {
+            chooser.hidden = true;
+            setMode(btn.dataset.mode);
+        });
+    });
+</script>
+</body>
 </html>

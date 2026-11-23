@@ -63,29 +63,29 @@
         <div class="top-row">
             <div>
                 <button class="tab-button active-tab" id="inboxButton" onclick="showInbox()">
-                    Inbox <span class="red-dot">&#9679;</span>
+                    Indbakke <span class="red-dot">&#9679;</span>
                 </button>
 
                 <button class="tab-button" id="unseenButton" onclick="showUnseen()">
-                    Unseen notification <span class="red-dot">#&9679;</span>
+                    Ulæste notifikationer <span class="red-dot">&#9679;</span>
                 </button>
             </div>
 
             <input type="text" class="search-box" id="searchBox"
-                    placeholder="Search in notifications" onkeyup="searchNotes()">
+                    placeholder="Søg i notifikationer" onkeyup="searchNotes()">
         </div>
 
         <div id="noteList">
-            <div class="note note-unseen" data-text="turn on pump">
-                Turn on pump <span class="red-dot">&#9679;</span>
+            <div class="note note-unseen" data-text="tænd pumpe">
+                Tænd pumpe <span class="red-dot">&#9679;</span>
             </div>
 
-             <div class="note note-seen" data text="charge battery from 13.00 to 16.00">
-                Charge battery from 13.00 to 16.00
+             <div class="note note-seen" data-text="oplad batteriet fra 13.00 til 16.00">
+                Oplad batteriet fra 13.00 til 16.00
              </div>
         </div>
 
-    <p class ="no-result" id="noResult">No notifications found.</p>
+    <p class ="no-result" id="noResult">Ingen notifikationer fundet.</p>
 </div>
 
 <script>
