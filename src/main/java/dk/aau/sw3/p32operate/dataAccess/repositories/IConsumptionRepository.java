@@ -10,4 +10,8 @@ import java.util.Optional;
 public interface IConsumptionRepository extends Repository<ConsumptionEntity, LocalDateTime> {
     List<ConsumptionEntity> findAll();
     Optional<ConsumptionEntity> findByDate(LocalDateTime date);
+
+    void save (ConsumptionEntity entity);
+    void delete (ConsumptionEntity entity);
+
 }

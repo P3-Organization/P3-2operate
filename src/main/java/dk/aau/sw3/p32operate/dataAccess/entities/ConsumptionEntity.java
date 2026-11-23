@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Objects;
 
 @Entity
 @Table(name = "electricity_consumption")
@@ -32,6 +33,20 @@ public class ConsumptionEntity {
 
     @PrePersist
     public void setDate(){
-        this.date = LocalDateTime.now().with(LocalTime.MIN);
+        if(this.date == null){
+            this.date = LocalDateTime.now().with(LocalTime.MIN);
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        ConsumptionEntity entity = (ConsumptionEntity) o;
+        return Double.compare(kwh, entity.kwh) == 0 && Double.compare(kr, entity.kr) == 0 && Double.compare(min_kr_total, entity.min_kr_total) == 0 && Objects.equals(date, entity.date);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(date, kwh, kr, min_kr_total);
     }
 }

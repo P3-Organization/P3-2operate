@@ -1,1 +1,1 @@
-DROP TABLE temp_rooms;
+DROP TABLE temp_room_recordings;
