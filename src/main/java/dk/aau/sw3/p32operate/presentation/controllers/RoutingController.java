@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class RoutingController {
 
-    @GetMapping("/")
+    @GetMapping("/index")
     public String index() { return "index"; }
 
     @GetMapping("/battery")
@@ -23,4 +23,5 @@ public class RoutingController {
 
     @GetMapping("/register")
     public String register() { return "register"; }
+    
 }

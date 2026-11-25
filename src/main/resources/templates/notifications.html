@@ -6,8 +6,10 @@
     <link rel="stylesheet" href="/css/profile.css">
     <link rel="stylesheet" href="/css/navigationbar.css">
     <link rel="stylesheet" href="/css/design.css">
+    <link rel="stylesheet" href="/css/notifications.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Notification</title>
+
 </head>
 <body>
     <nav class="Navigationbar">
@@ -57,7 +59,34 @@
         </div>
     </div>
 
-</body>
+    <div class = "box">
+        <div class="top-row">
+            <div>
+                <button class="tab-button active-tab" id="inboxButton" onclick="showInbox()">
+                    Indbakke <span class="red-dot">&#9679;</span>
+                </button>
+
+                <button class="tab-button" id="unseenButton" onclick="showUnseen()">
+                    Ulæste notifikationer <span class="red-dot">&#9679;</span>
+                </button>
+            </div>
+
+            <input type="text" class="search-box" id="searchBox"
+                    placeholder="Søg i notifikationer" onkeyup="searchNotes()">
+        </div>
+
+        <div id="noteList">
+            <div class="note note-unseen" data-text="tænd pumpe">
+                Tænd pumpe <span class="red-dot">&#9679;</span>
+            </div>
+
+             <div class="note note-seen" data-text="oplad batteriet fra 13.00 til 16.00">
+                Oplad batteriet fra 13.00 til 16.00
+             </div>
+        </div>
+
+    <p class ="no-result" id="noResult">Ingen notifikationer fundet.</p>
+</div>
 
 <script>
     let btn = document.querySelector('#btn');
@@ -66,5 +95,50 @@
     btn.onclick = function() {
         sidebar.classList.toggle('active');
     };
-</script>
+    // to track which tabs are open we use all or unseen.
+
+    let currentTab = "all";
+
+    function showInbox() {
+        currentTab = "all";
+        document.getElementById("inboxButton").classList.add("active-tab");
+        document.getElementById("unseenButton").classList.remove("active-tab");
+        searchNotes();
+    }
+
+    function showUnseen() {
+        currentTab = "unseen";
+        document.getElementById("unseenButton").classList.add("active-tab");
+        document.getElementById("inboxButton").classList.remove("active-tab");
+        searchNotes();
+    }
+
+    function searchNotes() {
+        let searchText = document.getElementById("searchBox").value.toLowerCase();
+        let notes = document.querySelectorAll("#noteList .note");
+        let found = 0;
+
+        for (let i = 0; i < notes.length; i++) {
+            let note = notes [i];
+            let textMatch = note.getAttribute("data-text").indexOf(searchText) !== -1;
+            let tabMatch = true;
+
+            if (currentTab === "unseen" && !note.classList.contains("note-unseen")) {
+                tabMatch = false;
+            }
+
+            if (textMatch && tabMatch) {
+                note.style.display = "block";
+                found++;
+            } else {
+                note.style.display = "none";
+            }
+        }
+
+        document.getElementById("noResult").style.display = found === 0 ? "block" : "none";
+    }
+
+    searchNotes();
+    </script>
+</body>
 </html>
