@@ -23,4 +23,5 @@ public class RoutingController {
 
     @GetMapping("/register")
     public String register() { return "register"; }
+    
 }
