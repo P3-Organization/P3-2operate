@@ -4,12 +4,16 @@ import dk.aau.sw3.p32operate.business.models.BatteryRecommendationModel;
 import dk.aau.sw3.p32operate.business.models.ElectricityPriceModel;
 
 import java.util.Optional;
-
+import java.time.LocalTime;
+import java.time.OffsetDateTime;
 
 public interface ICalculateBatteryRecommendation {
 
     Optional<BatteryRecommendationModel> calculateBatteryRecommendation(
-            ElectricityPriceModel electricityPriceModel
+            ElectricityPriceModel electricityPriceModel,
+            OffsetDateTime currentTime,
+            LocalTime earliestActionTime,
+            LocalTime latestActionTime
     );
 
 
