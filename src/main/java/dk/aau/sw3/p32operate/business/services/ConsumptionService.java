@@ -11,6 +11,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+//Gets the consumption repository from the entity (SQL-table) stored by dates.
+// This information from the entity is used to validate the requests from the controller through this service layer
+
 @Service
 public class ConsumptionService implements IConsumptionService {
     private final IConsumptionRepository consumptionRepository;

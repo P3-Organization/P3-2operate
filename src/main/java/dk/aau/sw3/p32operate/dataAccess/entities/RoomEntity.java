@@ -9,6 +9,10 @@ import lombok.Setter;
 import java.util.List;
 import java.util.Objects;
 
+//this entity is the full record of the data for the rooms (roomId, Room name, and room recordings) as it is stored in the DB
+//the 'equals' function compares the different parameters for rooms and ensures that the id, names, and recordings match
+//This data is being stored/represented in an SQL-table
+
 @Entity
 @Table(name = "rooms")
 @AllArgsConstructor

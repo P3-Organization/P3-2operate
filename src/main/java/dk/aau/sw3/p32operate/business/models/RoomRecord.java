@@ -11,6 +11,9 @@ import java.util.Objects;
 @AllArgsConstructor
 @Getter
 @Setter
+//This class defines all parameters relevant for each room data where the 'equals' method checks
+// if any id's match. If they do, then they will be percived as the same
+//This is a Java Object, and also where changes can be stored
 public class RoomRecord {
     private Integer id;
 

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.List;
 
+//creates a list with updated electricity prices for newest dates.
 @Service
 public class ElectricityService {
 

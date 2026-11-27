@@ -9,6 +9,9 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+//this entity represent the room recodings in an SQL-table and ensures that the data in these tables are seperate from the buisness layer so that the original data never gets lost/overridden
+//however the same principles and checks, in terms of the code, implies as it does for the RoomRecord class in the 'models' folder
+
 @Entity
 @Table(name = "room_recordings")
 @AllArgsConstructor

@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestClient;
 
+//this class gets the electricity prices from an official website
 @Configuration
 public class ApiConfig {
 

@@ -10,6 +10,10 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Objects;
 
+//this entity is the full record of the data for consumption (date, kwh, kr, and minimum kr in total) as it is stored in the DB
+//the 'equals' function compares the different datatypes to ensure the correct output being returned
+//This data is being stored/represented in an SQL-table
+
 @Entity
 @Table(name = "electricity_consumption")
 @NoArgsConstructor

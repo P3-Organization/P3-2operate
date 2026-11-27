@@ -11,6 +11,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
+//This class calculates when the batteries needs charging and recommed an optimal time compared
+// to when electricity prices are low vs. high
 @Service
 public class BatteryRecommendationService
         implements ICalculateBatteryRecommendation {
